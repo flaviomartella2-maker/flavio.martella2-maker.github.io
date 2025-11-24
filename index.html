@@ -8,8 +8,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0e0e0e;
-    color: #eee;
+    background: #fff;
+    color: #000;
     scroll-behavior: smooth;
 }
 
@@ -18,18 +18,18 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #111;
+    background: #f5f5f5;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     padding: 15px 0;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #ccc;
     z-index: 100;
 }
 
 nav a {
-    color: #eee;
+    color: #000;
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
@@ -43,18 +43,12 @@ nav a:hover {
 header {
     text-align: center;
     padding: 120px 40px 40px 40px;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #ccc;
 }
 
 h1 {
     margin: 0;
     font-size: 2.8em;
-}
-
-p.subtitle {
-    margin-top: 10px;
-    font-size: 1.2em;
-    opacity: 0.8;
 }
 
 /* Home sections */
@@ -68,8 +62,8 @@ p.subtitle {
 
 .section-link {
     padding: 10px 20px;
-    background: #181818;
-    color: #eee;
+    background: #eee;
+    color: #000;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
@@ -77,7 +71,7 @@ p.subtitle {
 }
 
 .section-link:hover {
-    background: #333;
+    background: #ccc;
 }
 
 /* Sezioni */
@@ -85,25 +79,31 @@ p.subtitle {
     padding: 50px 40px;
 }
 
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 /* Gallery */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    padding: 40px;
     max-width: 1400px;
     margin: auto;
 }
 
 .card {
-    background: #181818;
+    background: #f5f5f5;
     padding: 20px;
     border-radius: 14px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombra leggera */
 }
 
 .card:hover {
     transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* ombra più marcata al passaggio del mouse */
 }
 
 .card h3 {
@@ -126,12 +126,12 @@ p.subtitle {
 footer {
     text-align: center;
     padding: 40px;
-    border-top: 1px solid #222;
+    border-top: 1px solid #ccc;
     margin-top: 40px;
 }
 
 footer a {
-    color: #eee;
+    color: #000;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -152,7 +152,7 @@ footer a:hover {
 <nav>
     <a href="#home">Home</a>
     <a href="#incisioni">Incisioni</a>
-    <a href="#editoria">Editoria</a>
+    <a href="#progetti-editoriali">Progetti Editoriali</a>
     <a href="#illustrazioni">Illustrazioni</a>
     <a href="#foto">Foto</a>
     <a href="#videos">Video</a>
@@ -162,11 +162,10 @@ footer a:hover {
 <!-- Header / Home -->
 <header id="home">
 <h1>Portfolio di Flavio</h1>
-<p class="subtitle">Visual • Video • Progetti</p>
 
 <div class="home-sections">
     <a href="#incisioni" class="section-link">Incisioni</a>
-    <a href="#editoria" class="section-link">Editoria</a>
+    <a href="#progetti-editoriali" class="section-link">Progetti Editoriali</a>
     <a href="#illustrazioni" class="section-link">Illustrazioni</a>
     <a href="#foto" class="section-link">Foto</a>
     <a href="#videos" class="section-link">Video</a>
@@ -187,22 +186,32 @@ footer a:hover {
         <p class="description">Descrizione incisione 2</p>
         <img src="https://via.placeholder.com/400x200?text=Incisione+2" alt="Incisione 2">
     </div>
+    <div class="card">
+        <h3>Incisione 3</h3>
+        <p class="description">Descrizione incisione 3</p>
+        <img src="https://via.placeholder.com/400x200?text=Incisione+3" alt="Incisione 3">
+    </div>
 </div>
 </div>
 
-<!-- Sezione Editoria -->
-<div id="editoria" class="section">
-<h2>Editoria</h2>
+<!-- Sezione Progetti Editoriali -->
+<div id="progetti-editoriali" class="section">
+<h2>Progetti Editoriali</h2>
 <div class="gallery">
     <div class="card">
-        <h3>Progetto editoriale 1</h3>
+        <h3>Progetto 1</h3>
         <p class="description">Descrizione progetto editoriale 1</p>
-        <img src="https://via.placeholder.com/400x200?text=Editoria+1" alt="Editoria 1">
+        <img src="https://via.placeholder.com/400x200?text=Progetto+1" alt="Progetto 1">
     </div>
     <div class="card">
-        <h3>Progetto editoriale 2</h3>
+        <h3>Progetto 2</h3>
         <p class="description">Descrizione progetto editoriale 2</p>
-        <img src="https://via.placeholder.com/400x200?text=Editoria+2" alt="Editoria 2">
+        <img src="https://via.placeholder.com/400x200?text=Progetto+2" alt="Progetto 2">
+    </div>
+    <div class="card">
+        <h3>Progetto 3</h3>
+        <p class="description">Descrizione progetto editoriale 3</p>
+        <img src="https://via.placeholder.com/400x200?text=Progetto+3" alt="Progetto 3">
     </div>
 </div>
 </div>
@@ -221,6 +230,11 @@ footer a:hover {
         <p class="description">Descrizione illustrazione 2</p>
         <img src="https://via.placeholder.com/400x200?text=Illustrazione+2" alt="Illustrazione 2">
     </div>
+    <div class="card">
+        <h3>Illustrazione 3</h3>
+        <p class="description">Descrizione illustrazione 3</p>
+        <img src="https://via.placeholder.com/400x200?text=Illustrazione+3" alt="Illustrazione 3">
+    </div>
 </div>
 </div>
 
@@ -233,11 +247,23 @@ footer a:hover {
         <p class="description">Questa è la tua foto caricata</p>
         <img src="https://github.com/flaviomartella2-maker/flavio.martella2-maker.github.io/blob/main/img30.jpg?raw=true" alt="Foto 1">
     </div>
+    <div class="card">
+        <h3>Foto 2</h3>
+        <p class="description">Placeholder foto 2</p>
+        <img src="https://via.placeholder.com/400x200?text=Foto+2" alt="Foto 2">
+    </div>
+    <div class="card">
+        <h3>Foto 3</h3>
+        <p class="description">Placeholder foto 3</p>
+        <img src="https://via.placeholder.com/400x200?text=Foto+3" alt="Foto 3">
+    </div>
 </div>
 </div>
 
 <!-- Sezione Video -->
-<div id="videos" class="gallery">
+<div id="videos" class="section">
+<h2>Video</h2>
+<div class="gallery">
 <div class="card">
     <h3>MANI</h3>
     <p class="description">Esperimento visivo sulle mani come strumenti espressivi.</p>
@@ -254,11 +280,18 @@ footer a:hover {
     <iframe src="https://www.youtube.com/embed/5QArFqaPO9M" allowfullscreen></iframe>
 </div>
 </div>
+</div>
 
 <!-- Footer -->
 <footer id="contacts">
 <p class="contact-title">Contatti</p>
 <p>Email: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a></p>
+<p>Instagram: <a href="https://www.instagram.com/fla.tucca" target="_blank">@fla.tucca</a></p>
+</footer>
+
+</body>
+</html>
+
 <p>Instagram: <a href="https://www.instagram.com/fla.tucca" target="_blank">@fla.tucca</a></p>
 </footer>
 
