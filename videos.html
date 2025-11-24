@@ -1,47 +1,84 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video - Portfolio di Flavio</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video – Flavio Martella</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<nav>
+<!-- NAVBAR -->
+<div class="navbar">
     <a href="index.html">Home</a>
     <a href="incisioni.html">Incisioni</a>
-    <a href="progetti-editoriali.html">Progetti Editoriali</a>
+    <a href="editoria.html">Progetti Editoriali</a>
     <a href="illustrazioni.html">Illustrazioni</a>
     <a href="foto.html">Foto</a>
-    <a href="videos.html">Video</a>
-</nav>
+    <a class="active" href="video.html">Video</a>
+</div>
 
-<div class="section">
-<h2>Video</h2>
-<div class="gallery">
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/VZFh1hVdLJU" allowfullscreen class="media"></iframe>
+<h1 class="page-title">Video</h1>
+
+<div class="grid">
+
+    <!-- VIDEO 1 -->
+    <div class="card"
+         onclick="openVideo('VZFh1hVdLJU', 'MANI', 'Esperimento visivo sulle mani come strumenti espressivi.')">
+        <img src="img/mani.jpg" alt="MANI">
         <h3>MANI</h3>
-        <p class="description">Esperimento visivo sulle mani come strumenti espressivi.</p>
+        <p>Esperimento visivo sulle mani come strumenti espressivi.</p>
     </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/5iiZoGY-9Ok" allowfullscreen class="media"></iframe>
+
+    <!-- VIDEO 2 -->
+    <div class="card"
+         onclick="openVideo('5iiZoGY-9Ok', 'DEPOSIZIONE', 'Video ispirato al tema della deposizione e della materia.')">
+        <img src="img/deposizione.jpg" alt="DEPOSIZIONE">
         <h3>DEPOSIZIONE</h3>
-        <p class="description">Video ispirato al tema della deposizione e della materia.</p>
+        <p>Video ispirato al tema della deposizione e della materia.</p>
     </div>
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/5QArFqaPO9M" allowfullscreen class="media"></iframe>
+
+    <!-- VIDEO 3 -->
+    <div class="card"
+         onclick="openVideo('5QArFqaPO9M', 'USCIO', 'Progetto che esplora l’architettura e la percezione dello spazio.')">
+        <img src="img/uscio.jpg" alt="USCIO">
         <h3>USCIO</h3>
-        <p class="description">Progetto che esplora l'architettura e la percezione dello spazio.</p>
+        <p>Progetto che esplora l’architettura e la percezione dello spazio.</p>
     </div>
-</div>
+
 </div>
 
-<footer>
-<p>Contatti: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a> | 
-Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
-</footer>
+
+<!-- LIGHTBOX VIDEO -->
+<div class="lightbox" id="videoLightbox">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+
+    <iframe id="videoFrame" width="900" height="506" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+
+    <div class="caption">
+        <h2 id="videoTitle"></h2>
+        <p id="videoDesc"></p>
+    </div>
+</div>
+
+<script>
+function openVideo(id, title, desc) {
+    document.getElementById("videoLightbox").style.display = "flex";
+    document.getElementById("videoFrame").src =
+        "https://www.youtube.com/embed/" + id + "?autoplay=1";
+    document.getElementById("videoTitle").textContent = title;
+    document.getElementById("videoDesc").textContent = desc;
+}
+
+function closeVideo() {
+    document.getElementById("videoLightbox").style.display = "none";
+    document.getElementById("videoFrame").src = "";
+}
+</script>
 
 </body>
 </html>
