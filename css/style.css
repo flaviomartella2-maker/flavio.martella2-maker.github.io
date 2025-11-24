@@ -1,144 +1,128 @@
-/* ==========================
-   STILE GENERALE
-========================== */
-body {
-    margin: 0;
-    background: white;
-    color: black;
-    font-family: Arial, sans-serif;
-}
-
-/* ==========================
+/* =============================
    TOOLBAR
-========================== */
+============================= */
 .toolbar {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 20px 0;
-    background: white;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background-color: #000;
+    padding: 10px 0;
 }
 
 .toolbar a {
+    color: #fff;
     text-decoration: none;
-    color: black;
+    margin: 0 15px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: opacity 0.2s ease;
+    transition: color 0.3s;
 }
 
 .toolbar a:hover {
-    opacity: 0.6;
+    color: #f0f0f0;
 }
 
-/* ==========================
+/* =============================
    HOME TITLE
-========================== */
+============================= */
 .home-title {
     text-align: center;
-    margin: 50px 0;
+    margin: 40px 0;
 }
 
 .home-title h1 {
-    font-size: 45px;
+    font-size: 3em;
 }
 
-/* ==========================
-   ANTEPRIME HOME
-========================== */
+/* =============================
+   PREVIEW CONTAINER
+============================= */
 .preview-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .preview-box {
-    text-align: center;
+    width: 250px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 25px;  /* angoli più smooth */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .preview-box img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #ccc;
 }
 
 .preview-box h2 {
-    margin-top: 10px;
-    font-size: 22px;
+    margin: 10px 0;
+    font-size: 1.2em;
 }
 
 .preview-box:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ==========================
-   PAGINE CATEGORIE
-========================== */
-.page-title {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    font-size: 38px;
-}
-
-/* CARD CATEGORIE */
+/* =============================
+   CARDS CONTAINER
+============================= */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 40px;
-    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-    background: white;
-    padding-bottom: 20px;
-    text-align: center;
+    width: 300px;
     cursor: pointer;
-    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 25px; /* angoli più smooth */
     overflow: hidden;
-    border: 1px solid #eee;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: #fff;
 }
 
 .card img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #ccc;
 }
 
 .card h3 {
-    margin: 10px 0 5px;
-    font-size: 20px;
+    margin: 10px 0 5px 0;
+    font-size: 1.2em;
 }
 
 .card p {
-    font-size: 14px;
-    opacity: 0.7;
-    padding: 0 10px;
+    margin: 0 0 10px 0;
+    font-size: 0.95em;
+    color: #555;
 }
 
 .card:hover {
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ==========================
-   MODALE
-========================== */
+/* =============================
+   MODAL
+============================= */
 .modal-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,39 +130,26 @@ body {
 }
 
 .modal-content {
-    background: white;
+    background: #fff;
+    padding: 20px;
+    width: 80%;
     max-width: 900px;
-    width: 90%;
-    padding: 30px;
-    border-radius: 20px;
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
+    border-radius: 25px; /* angoli smooth */
     text-align: center;
-}
-
-.modal-content img,
-.modal-content iframe {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    position: relative;
 }
 
 .modal-close {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 24px;
+    font-size: 2em;
     cursor: pointer;
 }
 
-.modal-content button {
-    padding: 8px 15px;
-    margin: 5px;
-    cursor: pointer;
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
+.modal-content img,
+.modal-content iframe {
+    border-radius: 15px; /* angoli leggermente arrotondati per contenuti */
+    max-height: 500px;
+    object-fit: contain;
 }
