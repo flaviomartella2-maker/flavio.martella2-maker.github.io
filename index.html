@@ -42,7 +42,7 @@ nav a:hover {
 /* Header */
 header {
     text-align: center;
-    padding: 120px 40px 40px 40px; /* spazio per navbar */
+    padding: 120px 40px 40px 40px;
     border-bottom: 1px solid #222;
 }
 
@@ -80,7 +80,12 @@ p.subtitle {
     background: #333;
 }
 
-/* Gallery video */
+/* Sezioni */
+.section {
+    padding: 50px 40px;
+}
+
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -90,32 +95,30 @@ p.subtitle {
     margin: auto;
 }
 
-.video-card {
+.card {
     background: #181818;
     padding: 20px;
     border-radius: 14px;
     transition: transform 0.2s ease;
 }
 
-.video-card:hover {
+.card:hover {
     transform: scale(1.02);
 }
 
-.video-card h3 {
+.card h3 {
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.video-card p.description {
+.card p.description {
     font-size: 0.95em;
     opacity: 0.8;
     margin-bottom: 15px;
 }
 
-iframe {
+.card img, .card iframe {
     width: 100%;
-    height: 200px;
-    border: 0;
     border-radius: 10px;
 }
 
@@ -170,51 +173,94 @@ footer a:hover {
 </div>
 </header>
 
-<!-- Sezioni vuote -->
-<div id="incisioni" style="padding:50px 40px;">
+<!-- Sezione Incisioni -->
+<div id="incisioni" class="section">
 <h2>Incisioni</h2>
-<p>Qui puoi aggiungere le tue incisioni.</p>
+<div class="gallery">
+    <div class="card">
+        <h3>Incisione 1</h3>
+        <p class="description">Descrizione incisione 1</p>
+        <img src="https://via.placeholder.com/400x200?text=Incisione+1" alt="Incisione 1">
+    </div>
+    <div class="card">
+        <h3>Incisione 2</h3>
+        <p class="description">Descrizione incisione 2</p>
+        <img src="https://via.placeholder.com/400x200?text=Incisione+2" alt="Incisione 2">
+    </div>
+</div>
 </div>
 
-<div id="editoria" style="padding:50px 40px;">
+<!-- Sezione Editoria -->
+<div id="editoria" class="section">
 <h2>Editoria</h2>
-<p>Qui puoi aggiungere i tuoi lavori editoriali.</p>
+<div class="gallery">
+    <div class="card">
+        <h3>Progetto editoriale 1</h3>
+        <p class="description">Descrizione progetto editoriale 1</p>
+        <img src="https://via.placeholder.com/400x200?text=Editoria+1" alt="Editoria 1">
+    </div>
+    <div class="card">
+        <h3>Progetto editoriale 2</h3>
+        <p class="description">Descrizione progetto editoriale 2</p>
+        <img src="https://via.placeholder.com/400x200?text=Editoria+2" alt="Editoria 2">
+    </div>
+</div>
 </div>
 
-<div id="illustrazioni" style="padding:50px 40px;">
+<!-- Sezione Illustrazioni -->
+<div id="illustrazioni" class="section">
 <h2>Illustrazioni</h2>
-<p>Qui puoi aggiungere le tue illustrazioni.</p>
+<div class="gallery">
+    <div class="card">
+        <h3>Illustrazione 1</h3>
+        <p class="description">Descrizione illustrazione 1</p>
+        <img src="https://via.placeholder.com/400x200?text=Illustrazione+1" alt="Illustrazione 1">
+    </div>
+    <div class="card">
+        <h3>Illustrazione 2</h3>
+        <p class="description">Descrizione illustrazione 2</p>
+        <img src="https://via.placeholder.com/400x200?text=Illustrazione+2" alt="Illustrazione 2">
+    </div>
+</div>
 </div>
 
-<div id="foto" style="padding:50px 40px;">
+<!-- Sezione Foto -->
+<div id="foto" class="section">
 <h2>Foto</h2>
-<p>Qui puoi aggiungere le tue fotografie.</p>
+<div class="gallery">
+    <div class="card">
+        <h3>Foto 1</h3>
+        <p class="description">Descrizione foto 1</p>
+        <img src="https://via.placeholder.com/400x200?text=Foto+1" alt="Foto 1">
+    </div>
+    <div class="card">
+        <h3>Foto 2</h3>
+        <p class="description">Descrizione foto 2</p>
+        <img src="https://via.placeholder.com/400x200?text=Foto+2" alt="Foto 2">
+    </div>
+</div>
 </div>
 
 <!-- Sezione Video -->
 <div id="videos" class="gallery">
-
-<div class="video-card">
+<div class="card">
     <h3>MANI</h3>
     <p class="description">Esperimento visivo sulle mani come strumenti espressivi.</p>
     <iframe src="https://www.youtube.com/embed/VZFh1hVdLJU" allowfullscreen></iframe>
 </div>
-
-<div class="video-card">
+<div class="card">
     <h3>DEPOSIZIONE</h3>
     <p class="description">Video ispirato al tema della deposizione e della materia.</p>
     <iframe src="https://www.youtube.com/embed/5iiZoGY-9Ok" allowfullscreen></iframe>
 </div>
-
-<div class="video-card">
+<div class="card">
     <h3>USCIO</h3>
     <p class="description">Progetto che esplora l'architettura e la percezione dello spazio.</p>
     <iframe src="https://www.youtube.com/embed/5QArFqaPO9M" allowfullscreen></iframe>
 </div>
-
 </div>
 
-<!-- Footer / Contatti -->
+<!-- Footer -->
 <footer id="contacts">
 <p class="contact-title">Contatti</p>
 <p>Email: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a></p>
