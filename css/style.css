@@ -21,13 +21,17 @@ body {
 
 .navbar a {
     text-decoration: none;
-    color: #000000;
+    color: #000000;       /* link nero */
     font-weight: 500;
     transition: opacity 0.2s;
 }
 
 .navbar a:hover {
     opacity: 0.6;
+}
+
+.navbar a:visited {
+    color: #000000;       /* link visitati neri */
 }
 
 .navbar .active {
@@ -70,7 +74,8 @@ body {
 }
 
 .card img {
-    width: 100%;
+    width: 100%;       /* riempie la card */
+    height: auto;      /* mantiene proporzioni */
     border-radius: 4px;
 }
 
@@ -103,6 +108,7 @@ body {
 .lightbox iframe {
     max-width: 90%;
     max-height: 70vh;
+    height: auto;       /* mantiene proporzioni */
     margin-bottom: 20px;
     border-radius: 8px;
     background: white;
