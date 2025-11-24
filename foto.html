@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foto - Portfolio di Flavio</title>
+<title>Flavio Martella - Foto</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
     <a href="index.html">Home</a>
     <a href="incisioni.html">Incisioni</a>
@@ -18,35 +17,32 @@
     <a href="videos.html">Video</a>
 </nav>
 
+<header>
+    <h1>Foto</h1>
+</header>
+
 <div class="section">
-<h2>Foto</h2>
-<div class="gallery">
-
-    <!-- FOTO 1 -->
-    <div class="card" onclick="openCard(this)">
-        <img src="img/foto1.jpg" alt="Foto 1" class="media">
-        <h3>Foto 1</h3>
-        <p class="description">Questa è la prima foto caricata sul sito.</p>
+    <div class="gallery">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto1.jpg" class="media">
+            <h3>Foto 1</h3>
+            <p class="description">Descrizione foto 1</p>
+        </div>
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto2.jpg" class="media">
+            <h3>Foto 2</h3>
+            <p class="description">Descrizione foto 2</p>
+        </div>
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto3.jpg" class="media">
+            <h3>Foto 3</h3>
+            <p class="description">Descrizione foto 3</p>
+        </div>
+        <!-- Aggiungi altre foto qui -->
     </div>
-
-    <!-- FOTO 2 -->
-    <div class="card" onclick="openCard(this)">
-        <img src="img/foto2.jpg" alt="Foto 2" class="media">
-        <h3>Foto 2</h3>
-        <p class="description">Descrizione foto 2.</p>
-    </div>
-
-    <!-- FOTO 3 -->
-    <div class="card" onclick="openCard(this)">
-        <img src="img/foto3.jpg" alt="Foto 3" class="media">
-        <h3>Foto 3</h3>
-        <p class="description">Descrizione foto 3.</p>
-    </div>
-
-</div>
 </div>
 
-<!-- Lightbox -->
+<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeCard()">
     <div id="lightbox-content" onclick="event.stopPropagation()">
         <span id="lightbox-close" onclick="closeCard()">&times;</span>
@@ -61,7 +57,6 @@
 Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
 </footer>
 
-<!-- Script Lightbox -->
 <script>
 function openCard(card) {
     const img = card.querySelector('.media').src;
@@ -81,3 +76,9 @@ function closeCard() {
 
 </body>
 </html>
+
+</script>
+
+</body>
+</html>
+
