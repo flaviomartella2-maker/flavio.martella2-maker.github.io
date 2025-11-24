@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
     <a href="index.html">Home</a>
     <a href="incisioni.html">Incisioni</a>
@@ -22,21 +23,21 @@
 <div class="gallery">
 
     <!-- FOTO 1 -->
-    <div class="card">
+    <div class="card" onclick="openCard(this)">
         <img src="img/foto1.jpg" alt="Foto 1" class="media">
         <h3>Foto 1</h3>
         <p class="description">Questa è la prima foto caricata sul sito.</p>
     </div>
 
     <!-- FOTO 2 -->
-    <div class="card">
+    <div class="card" onclick="openCard(this)">
         <img src="img/foto2.jpg" alt="Foto 2" class="media">
         <h3>Foto 2</h3>
         <p class="description">Descrizione foto 2.</p>
     </div>
 
     <!-- FOTO 3 -->
-    <div class="card">
+    <div class="card" onclick="openCard(this)">
         <img src="img/foto3.jpg" alt="Foto 3" class="media">
         <h3>Foto 3</h3>
         <p class="description">Descrizione foto 3.</p>
@@ -45,10 +46,38 @@
 </div>
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeCard()">
+    <div id="lightbox-content" onclick="event.stopPropagation()">
+        <span id="lightbox-close" onclick="closeCard()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+    </div>
+</div>
+
 <footer>
 <p>Contatti: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a> | 
 Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
 </footer>
+
+<!-- Script Lightbox -->
+<script>
+function openCard(card) {
+    const img = card.querySelector('.media').src;
+    const title = card.querySelector('h3').innerText;
+    const desc = card.querySelector('.description').innerText;
+
+    document.getElementById('lightbox-img').src = img;
+    document.getElementById('lightbox-title').innerText = title;
+    document.getElementById('lightbox-desc').innerText = desc;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeCard() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 
 </body>
 </html>
