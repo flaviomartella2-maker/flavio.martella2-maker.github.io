@@ -3,82 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flavio Martella - Foto</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Foto - Flavio Martella</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
+<div class="navbar">
     <a href="index.html">Home</a>
     <a href="incisioni.html">Incisioni</a>
-    <a href="progetti-editoriali.html">Progetti Editoriali</a>
+    <a href="editoria.html">Progetti Editoriali</a>
     <a href="illustrazioni.html">Illustrazioni</a>
-    <a href="foto.html">Foto</a>
-    <a href="videos.html">Video</a>
-</nav>
-
-<header>
-    <h1>Foto</h1>
-</header>
-
-<div class="section">
-    <div class="gallery">
-        <div class="card" onclick="openCard(this)">
-            <img src="img/foto1.jpg" class="media">
-            <h3>Foto 1</h3>
-            <p class="description">Descrizione foto 1</p>
-        </div>
-        <div class="card" onclick="openCard(this)">
-            <img src="img/foto2.jpg" class="media">
-            <h3>Foto 2</h3>
-            <p class="description">Descrizione foto 2</p>
-        </div>
-        <div class="card" onclick="openCard(this)">
-            <img src="img/foto3.jpg" class="media">
-            <h3>Foto 3</h3>
-            <p class="description">Descrizione foto 3</p>
-        </div>
-        <!-- Aggiungi altre foto qui -->
-    </div>
+    <a class="active" href="foto.html">Foto</a>
+    <a href="video.html">Video</a>
+    <a href="contatti.html">Contatti</a>
 </div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeCard()">
-    <div id="lightbox-content" onclick="event.stopPropagation()">
-        <span id="lightbox-close" onclick="closeCard()">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-        <h3 id="lightbox-title"></h3>
-        <p id="lightbox-desc"></p>
+<h1 class="page-title">Foto</h1>
+
+<div class="grid">
+
+    <div class="card" onclick="openPhoto('img/foto1.jpg','Foto 1','Descrizione foto 1')">
+        <img src="img/foto1.jpg" alt="Foto 1">
+        <h3>Foto 1</h3>
+        <p>Descrizione foto 1</p>
     </div>
+
+    <!-- Puoi aggiungere altre foto qui -->
 </div>
 
-<footer>
-<p>Contatti: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a> | 
-Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
-</footer>
+<!-- LIGHTBOX FOTO -->
+<div class="lightbox" id="photoLightbox">
+    <span class="close-btn" onclick="closePhoto()">&times;</span>
+    <img id="photoFrame">
+    <div class="caption">
+        <h2 id="photoTitle"></h2>
+        <p id="photoDesc"></p>
+    </div>
+</div>
 
 <script>
-function openCard(card) {
-    const img = card.querySelector('.media').src;
-    const title = card.querySelector('h3').innerText;
-    const desc = card.querySelector('.description').innerText;
-
-    document.getElementById('lightbox-img').src = img;
-    document.getElementById('lightbox-title').innerText = title;
-    document.getElementById('lightbox-desc').innerText = desc;
-    document.getElementById('lightbox').style.display = 'flex';
+function openPhoto(src, title, desc){
+    document.getElementById("photoLightbox").style.display = "flex";
+    document.getElementById("photoFrame").src = src;
+    document.getElementById("photoTitle").textContent = title;
+    document.getElementById("photoDesc").textContent = desc;
 }
-
-function closeCard() {
-    document.getElementById('lightbox').style.display = 'none';
+function closePhoto(){
+    document.getElementById("photoLightbox").style.display = "none";
+    document.getElementById("photoFrame").src = "";
 }
 </script>
 
 </body>
 </html>
-
-</script>
-
-</body>
-</html>
-
