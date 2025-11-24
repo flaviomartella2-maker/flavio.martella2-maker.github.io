@@ -22,103 +22,102 @@
     <h1>Flavio Martella</h1>
 </header>
 
-<!-- Sezioni in presentazione -->
 <div class="section">
 
-    <!-- Incisioni anteprime -->
+    <!-- Incisioni -->
     <h2>Incisioni</h2>
     <div class="gallery">
-        <div class="card">
-            <img src="img/incisione1.jpg" alt="Incisione 1" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/incisione1.jpg" class="media">
             <h3>Incisione 1</h3>
             <p class="description">Descrizione incisione 1</p>
         </div>
-        <div class="card">
-            <img src="img/incisione2.jpg" alt="Incisione 2" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/incisione2.jpg" class="media">
             <h3>Incisione 2</h3>
             <p class="description">Descrizione incisione 2</p>
         </div>
-        <div class="card">
-            <img src="img/incisione3.jpg" alt="Incisione 3" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/incisione3.jpg" class="media">
             <h3>Incisione 3</h3>
             <p class="description">Descrizione incisione 3</p>
         </div>
     </div>
 
-    <!-- Progetti Editoriali anteprime -->
+    <!-- Progetti Editoriali -->
     <h2>Progetti Editoriali</h2>
     <div class="gallery">
-        <div class="card">
-            <img src="img/progetto1.jpg" alt="Progetto 1" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/progetto1.jpg" class="media">
             <h3>Progetto 1</h3>
             <p class="description">Descrizione progetto 1</p>
         </div>
-        <div class="card">
-            <img src="img/progetto2.jpg" alt="Progetto 2" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/progetto2.jpg" class="media">
             <h3>Progetto 2</h3>
             <p class="description">Descrizione progetto 2</p>
         </div>
-        <div class="card">
-            <img src="img/progetto3.jpg" alt="Progetto 3" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/progetto3.jpg" class="media">
             <h3>Progetto 3</h3>
             <p class="description">Descrizione progetto 3</p>
         </div>
     </div>
 
-    <!-- Illustrazioni anteprime -->
+    <!-- Illustrazioni -->
     <h2>Illustrazioni</h2>
     <div class="gallery">
-        <div class="card">
-            <img src="img/illustrazione1.jpg" alt="Illustrazione 1" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/illustrazione1.jpg" class="media">
             <h3>Illustrazione 1</h3>
             <p class="description">Descrizione illustrazione 1</p>
         </div>
-        <div class="card">
-            <img src="img/illustrazione2.jpg" alt="Illustrazione 2" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/illustrazione2.jpg" class="media">
             <h3>Illustrazione 2</h3>
             <p class="description">Descrizione illustrazione 2</p>
         </div>
-        <div class="card">
-            <img src="img/illustrazione3.jpg" alt="Illustrazione 3" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/illustrazione3.jpg" class="media">
             <h3>Illustrazione 3</h3>
             <p class="description">Descrizione illustrazione 3</p>
         </div>
     </div>
 
-    <!-- Foto anteprime -->
+    <!-- Foto -->
     <h2>Foto</h2>
     <div class="gallery">
-        <div class="card">
-            <img src="img/foto1.jpg" alt="Foto 1" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto1.jpg" class="media">
             <h3>Foto 1</h3>
             <p class="description">Descrizione foto 1</p>
         </div>
-        <div class="card">
-            <img src="img/foto2.jpg" alt="Foto 2" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto2.jpg" class="media">
             <h3>Foto 2</h3>
             <p class="description">Descrizione foto 2</p>
         </div>
-        <div class="card">
-            <img src="img/foto3.jpg" alt="Foto 3" class="media">
+        <div class="card" onclick="openCard(this)">
+            <img src="img/foto3.jpg" class="media">
             <h3>Foto 3</h3>
             <p class="description">Descrizione foto 3</p>
         </div>
     </div>
 
-    <!-- Video anteprime -->
+    <!-- Video -->
     <h2>Video</h2>
     <div class="gallery">
-        <div class="card">
+        <div class="card" onclick="openCard(this)">
             <iframe src="https://www.youtube.com/embed/VZFh1hVdLJU" allowfullscreen class="media"></iframe>
             <h3>MANI</h3>
             <p class="description">Esperimento visivo sulle mani come strumenti espressivi.</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="openCard(this)">
             <iframe src="https://www.youtube.com/embed/5iiZoGY-9Ok" allowfullscreen class="media"></iframe>
             <h3>DEPOSIZIONE</h3>
             <p class="description">Video ispirato al tema della deposizione e della materia.</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="openCard(this)">
             <iframe src="https://www.youtube.com/embed/5QArFqaPO9M" allowfullscreen class="media"></iframe>
             <h3>USCIO</h3>
             <p class="description">Progetto che esplora l'architettura e la percezione dello spazio.</p>
@@ -127,10 +126,59 @@
 
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeCard()">
+    <div id="lightbox-content" onclick="event.stopPropagation()">
+        <span id="lightbox-close" onclick="closeCard()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+    </div>
+</div>
+
 <footer>
 <p>Contatti: <a href="mailto:flavio.martella2@gmail.com">flavio.martella2@gmail.com</a> | 
 Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
 </footer>
+
+<script>
+function openCard(card) {
+    const img = card.querySelector('.media').src || card.querySelector('iframe').src;
+    const title = card.querySelector('h3').innerText;
+    const desc = card.querySelector('.description').innerText;
+
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+
+    if(card.querySelector('iframe')) {
+        lightboxImg.style.display = 'none';
+        if(document.getElementById('lightbox-iframe')) {
+            document.getElementById('lightbox-iframe').remove();
+        }
+        const iframe = document.createElement('iframe');
+        iframe.id = 'lightbox-iframe';
+        iframe.src = img;
+        iframe.width = '100%';
+        iframe.height = '400px';
+        iframe.allowFullscreen = true;
+        document.getElementById('lightbox-content').insertBefore(iframe, lightboxTitle);
+    } else {
+        lightboxImg.src = img;
+        lightboxImg.style.display = 'block';
+        const oldIframe = document.getElementById('lightbox-iframe');
+        if(oldIframe) oldIframe.remove();
+    }
+
+    lightboxTitle.innerText = title;
+    lightboxDesc.innerText = desc;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeCard() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 
 </body>
 </html>
