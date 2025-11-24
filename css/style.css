@@ -83,6 +83,10 @@
 .preview-box img {
     width: 100%;
     display: block;
+    border-radius: 15px;
+    padding: 5px;             /* margine bianco intorno all’immagine */
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
 /* =============================
@@ -110,7 +114,10 @@
 .card img {
     width: 100%;
     display: block;
-    border-bottom: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 5px;            /* margine bianco */
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
 .card h3 {
