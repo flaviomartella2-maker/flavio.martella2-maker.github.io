@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
     <a href="index.html">Home</a>
     <a href="incisioni.html">Incisioni</a>
@@ -18,7 +17,7 @@
     <a href="videos.html">Video</a>
 </nav>
 
-<header id="home">
+<header>
     <h1>Flavio Martella</h1>
 </header>
 
@@ -143,35 +142,21 @@ Instagram: <a href="https://www.instagram.com/fla.tucca">@fla.tucca</a></p>
 
 <script>
 function openCard(card) {
-    const img = card.querySelector('.media').src || card.querySelector('iframe').src;
+    const img = card.querySelector('.media') ? card.querySelector('.media').src : null;
     const title = card.querySelector('h3').innerText;
     const desc = card.querySelector('.description').innerText;
 
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxDesc = document.getElementById('lightbox-desc');
 
-    if(card.querySelector('iframe')) {
-        lightboxImg.style.display = 'none';
-        if(document.getElementById('lightbox-iframe')) {
-            document.getElementById('lightbox-iframe').remove();
-        }
-        const iframe = document.createElement('iframe');
-        iframe.id = 'lightbox-iframe';
-        iframe.src = img;
-        iframe.width = '100%';
-        iframe.height = '400px';
-        iframe.allowFullscreen = true;
-        document.getElementById('lightbox-content').insertBefore(iframe, lightboxTitle);
-    } else {
+    if(img) { 
         lightboxImg.src = img;
         lightboxImg.style.display = 'block';
         const oldIframe = document.getElementById('lightbox-iframe');
         if(oldIframe) oldIframe.remove();
     }
 
-    lightboxTitle.innerText = title;
-    lightboxDesc.innerText = desc;
+    document.getElementById('lightbox-title').innerText = title;
+    document.getElementById('lightbox-desc').innerText = desc;
     document.getElementById('lightbox').style.display = 'flex';
 }
 
