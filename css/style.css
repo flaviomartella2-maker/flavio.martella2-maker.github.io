@@ -8,28 +8,29 @@ body {
     margin: 0;
     background-color: #fafafa;
     color: #222;
+    font-size: 14px; /* leggermente più piccolo */
 }
 
 /* =============================
-   TOOLBAR MODERNA
+   TOOLBAR
 ============================= */
 .toolbar {
     display: flex;
     justify-content: center;
     background-color: rgba(0,0,0,0.9);
-    padding: 12px 0;
+    padding: 10px 0; /* più compatto */
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .toolbar a {
-    color: #fff;                /* link bianchi */
+    color: #fff;
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 15px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem; /* leggermente più piccolo */
     transition: color 0.3s, transform 0.2s;
 }
 
@@ -43,11 +44,11 @@ body {
 ============================= */
 .home-title {
     text-align: center;
-    margin: 50px 0 30px 0;
+    margin: 35px 0 20px 0; /* margini ridotti */
 }
 
 .home-title h1 {
-    font-size: 3.2em;
+    font-size: 2.8em;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -56,13 +57,13 @@ body {
    CATEGORIE E PREVIEW
 ============================= */
 .category-row {
-    margin: 50px 0;
+    margin: 35px 0;
 }
 
 .category-row h2 {
-    margin-left: 25px;
-    margin-bottom: 15px;
-    font-size: 1.9em;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.7em; /* leggermente più piccolo */
     font-weight: 600;
     color: #222;
 }
@@ -70,12 +71,12 @@ body {
 .preview-row {
     display: flex;
     overflow-x: auto;
-    gap: 18px;
-    padding: 0 25px 20px 25px;
+    gap: 15px;
+    padding: 0 20px 15px 20px;
 }
 
 .preview-row::-webkit-scrollbar {
-    height: 8px;
+    height: 7px;
 }
 
 .preview-row::-webkit-scrollbar-thumb {
@@ -85,27 +86,39 @@ body {
 
 .preview-box {
     flex: 0 0 auto;
-    width: 220px;
-    border-radius: 20px;
+    width: 260px; /* leggermente più compatto */
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     background-color: #fff;
 }
 
 .preview-box:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.22);
 }
 
-.preview-box img {
+/* Contenitore immagine 16:9 */
+.preview-box .img-wrapper,
+.card .img-wrapper {
     width: 100%;
-    display: block;
-    border-radius: 12px;
-    padding: 5px;             
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
     background-color: #fff;
-    box-sizing: border-box;
+}
+
+.preview-box .img-wrapper img,
+.card .img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* =============================
@@ -115,45 +128,51 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
+    padding: 15px;
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     background-color: #fff;
+}
+
+.card .img-wrapper {
+    padding-bottom: 56.25%;
+    position: relative;
 }
 
 .card img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: block;
-    border-radius: 12px;
-    padding: 5px;            
-    background-color: #fff;
-    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .card h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.2em;
+    margin: 8px 0 4px 0;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
 .card p {
-    margin: 0 0 10px 0;
-    font-size: 0.95em;
+    margin: 0 0 8px 0;
+    font-size: 0.9em;
     color: #555;
 }
 
 .card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* =============================
@@ -174,27 +193,27 @@ body {
 
 .modal-content {
     background: #fff;
-    padding: 25px;
+    padding: 20px;
     width: 80%;
-    max-width: 900px;
-    border-radius: 20px;
+    max-width: 850px;
+    border-radius: 16px;
     text-align: center;
     position: relative;
 }
 
 .modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2em;
+    top: 12px;
+    right: 16px;
+    font-size: 1.8em;
     cursor: pointer;
     color: #333;
 }
 
 .modal-content img,
 .modal-content iframe {
-    border-radius: 15px;
-    max-height: 500px;
+    border-radius: 12px;
+    max-height: 450px;
     object-fit: contain;
 }
 
@@ -203,19 +222,19 @@ body {
 ============================= */
 @media (max-width: 768px){
     .preview-box, .card {
-        width: 180px;
+        width: 160px;
     }
 
     .toolbar a {
-        margin: 0 12px;
-        font-size: 0.9rem;
+        margin: 0 10px;
+        font-size: 0.85rem;
     }
 
     .home-title h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     .category-row h2 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }
