@@ -25,7 +25,6 @@ function updateModal(){
 
         // Converti link corto youtube in embed
         let embedLink = item.replace('https://youtu.be/', 'https://www.youtube.com/embed/');
-        // Se è già un link embed completo, non cambia
         iframe.src = embedLink;
         iframe.width = "100%";
         iframe.height = "500";
